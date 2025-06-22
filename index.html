@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
+<div id="popupOverlay">
+    <div id="popupBox">
+        <p>
+            😫Ouchhhhhhhhhhhhhh!!!!!! 🥲You Pressed it so harddddddd!!! It reallly hurtssssss iykyk 🌚🌚...😒Don't You dare to do this again!!! Understood???
+            Now You have to Sayy Sorry so Loudly...as loud as i screamed because of you😭😭
+        </p>
+        <button id="popupClose">Sorry 🥺</button>
+    </div>
+</div>
 <body>
     <div id="wrapper">
         <div class="flag__birthday">
@@ -143,9 +152,10 @@
         </div>
     </div>
 </body>
+
 <script>
     let datetxt = "23 June 2005";
-    let datatxtletter = "Heyyy Meri LAADDO!. Love you cutie...i really wish alot of achievements for you...Trust me baby i really wanna see you successfull...i really want you to buy me Play station that you've promised me...but becoz of our jhagde n all kabhi mai naa rahu part of your life...remember my words...you're strong and indipendent, you need no-one, so never give up ...but etna ik ki one day you'll get everything that you deserve...be patient baby we always cry for bad things untill we know those were curse of our life...love you faguniyaaaaaaaaaaaaaaaaaa.💕";
+    let datatxtletter = "Heyyy Meri LAADDO!. Love you cutie...i really wish alot of achievements for you...Trust me baby i really wanna see you successfull...i really want you to buy me Play station that you've promised me...but becoz of our jhagde n all kabhi mai naa rahu part of your life...remember my words...you're strong and indipendent, you need no-one, so never give up ...but etna ik ki one day you'll get everything that you deserve...be patient baby we always cry for bad things untill we know those were curse of our life...cutie! I'm really sorry if I've ever hurt you. You mean a lot to me and I never want to lose you. I might mess up, but I always care. Please smile, always. Let’s fix everything with love, okay?...love you faguniyaaaaaaaaaaaaaaaaaa.💕";
     let titleLetter = "To you";
     let charArrDate = datetxt.split('');
     let charArrDateLetter = datatxtletter.split('');
@@ -229,5 +239,13 @@
         $(".box__letter").slideUp();
         $(".letter__border").slideUp();
     })
+    window.addEventListener("load", function () {
+            document.getElementById("popupOverlay").style.display = "flex";
+        });
+
+        document.getElementById("popupClose").addEventListener("click", function () {
+            document.getElementById("popupOverlay").style.display = "none";
+        });
+
 </script>
 </html>

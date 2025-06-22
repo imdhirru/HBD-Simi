@@ -467,7 +467,7 @@ body {
 .box__letter .letter__border{
     position: absolute;
     width: 55vw;
-    height: 450px;
+    height: 600px;
     background-color: var(--color-white);
     border-radius: 27px;
     padding: 17px;
@@ -794,4 +794,61 @@ body {
     }
 
 
+}
+#popupOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+#popupBox {
+    background-color: #fff0f5;
+    color: #444;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.2rem;
+    animation: popupBounce 0.6s ease;
+}
+
+#popupBox button {
+    margin-top: 20px;
+    background-color: #ff7fa8;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#popupBox button:hover {
+    background-color: #ff5287;
+}
+
+@keyframes popupBounce {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+
+    70% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }

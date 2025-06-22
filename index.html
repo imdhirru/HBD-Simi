@@ -62,7 +62,7 @@
             <div class="right">
                 <div class="box__account">
                     <div class="image">
-                        <img src="./images/r5.png" alt="">
+                        <img src="./images/r5.png" alt="" id="playVideoBtn" style="cursor: pointer;">
                     </div>
                     <div class="name">
                         <i class="fa-solid fa-heart"></i>
@@ -151,6 +151,21 @@
             </div>
         </div>
     </div>
+<!-- CUTE POPUP VIDEO MODAL -->
+<div id="videoModal"
+    style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-color: rgba(0,0,0,0.5); justify-content: center; align-items: center; z-index: 9999;">
+    <div id="videoWrapper"
+        style="position: relative; width: 80%; max-width: 500px; background: linear-gradient(135deg, #ffc0cb, #ff6b81); border: 6px solid #ff477e; border-radius: 25px; padding: 15px; box-shadow: 0 0 30px rgba(255, 105, 180, 0.5); transform: scale(0.6); opacity: 0; transition: all 0.4s ease-in-out;">
+        <video id="videoPlayer" width="100%" controls style="border-radius: 15px;">
+            <source src="./behaya.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button onclick="closeVideo()"
+            style="position: absolute; top: -15px; right: -15px; background-color: #ff477e; color: white; border: none; border-radius: 50%; width: 35px; height: 35px; font-size: 20px; cursor: pointer; box-shadow: 0 0 10px rgba(255,105,180,0.8);">×</button>
+    </div>
+</div>
+
+    
 </body>
 
 <script>
@@ -246,6 +261,32 @@
         document.getElementById("popupClose").addEventListener("click", function () {
             document.getElementById("popupOverlay").style.display = "none";
         });
+        document.getElementById("playVideoBtn").addEventListener("click", function () {
+                const videoModal = document.getElementById("videoModal");
+                const video = document.getElementById("videoPlayer");
+                const wrapper = document.getElementById("videoWrapper");
 
+                videoModal.style.display = "flex";
+                setTimeout(() => {
+                    wrapper.style.transform = "scale(1)";
+                    wrapper.style.opacity = "1";
+                }, 50);
+
+                video.currentTime = 0;
+                video.play();
+            });
+
+            function closeVideo() {
+                const videoModal = document.getElementById("videoModal");
+                const video = document.getElementById("videoPlayer");
+                const wrapper = document.getElementById("videoWrapper");
+
+                wrapper.style.transform = "scale(0.6)";
+                wrapper.style.opacity = "0";
+                setTimeout(() => {
+                    videoModal.style.display = "none";
+                }, 300);
+                video.pause();
+            }
 </script>
 </html>
